@@ -1,8 +1,7 @@
-access_key = "AKIAVHEANYNAM4KQJW44"
-secret_key = "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"
+access_key = "AKIAY4IEYKSX7USXT3G7"
+secret_key = "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"
 
 #cidr_block = "10.0.0.0/16"
-#vpc_name = "PROJECT1-VPC"
 
 #subnet1_name = "PROJECT1-USEAST1A-PUB"
 #subnet2_name = "PROJECT1-USEAST1B-PRIV"
