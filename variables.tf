@@ -1,3 +1,6 @@
+variable "region" {
+  type = string
+}
 
 variable "access_key" {
   type = string
