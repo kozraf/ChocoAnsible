@@ -1,4 +1,4 @@
-/*data "aws_ami" "ubuntu" {
+data "aws_ami" "ubuntu" {
   most_recent = true
 
   filter {
@@ -17,13 +17,10 @@
 resource "aws_instance" "CA-EC2-PRIVATE" {
   ami             = data.aws_ami.ubuntu.id
   instance_type   = "t2.micro"
-  subnet_id       = aws_subnet.CA-USEAST1B-PRIV.id
-  security_groups = [aws_security_group.PROJECT1-PRIVATE-SG.id]
-  #key_name = aws_key_pair.PROJECT1-KP.id
+  subnet_id = var.subnet_id
+  key_name = var.key_name
 
-  tags = {
-    Name = var.ec2_name1
+tags = {
+    Name = var.CA-EC2-private_name
   }
 }
-
-*/

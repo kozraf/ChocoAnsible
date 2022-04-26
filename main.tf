@@ -4,10 +4,13 @@ provider "aws" {
   secret_key = var.secret_key
 }
 
-module "vpc"{
+module "networking"{
 source =  "./modules/networking"
 }
 
-output "outputs" {
-  value = module.vpc.vpc_id
+module "computing" {
+  source   = "./modules/computing"
+  subnet_id = module.networking.subnet_CA-USEAST1B-PRIV_id
+  key_name = aws_key_pair.key_pair.key_name
+
 }
