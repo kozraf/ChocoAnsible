@@ -1,18 +1,20 @@
-variable "CA-EC2-private_name" {
+variable "tag_name" {
   type = string
-  default = "CA-EC2-private"
+
   }
 
-variable "CA-EC2-public_name" {
-  type = string
-  default = "CA-EC2-public"
-  }
 
-variable "subnet_id" {
+variable "sbnetid" {
   type = string
+}
+
+variable "secgroup" {
+  type = list(string)
 }
 
 variable "key_name" {
   type = string
 }
+
+
 

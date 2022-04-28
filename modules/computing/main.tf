@@ -14,14 +14,15 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-resource "aws_instance" "CA-EC2-PRIVATE" {
+resource "aws_instance" "CA-EC2-orch" {
   ami             = data.aws_ami.ubuntu.id
   instance_type   = "t2.micro"
-  subnet_id = var.subnet_id
+  subnet_id = var.sbnetid
+  vpc_security_group_ids = var.secgroup
   key_name = var.key_name
 
 tags = {
-    Name = var.CA-EC2-private_name
+    Name = var.tag_name
   }
 }
 
