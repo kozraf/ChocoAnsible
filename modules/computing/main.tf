@@ -24,3 +24,15 @@ tags = {
     Name = var.CA-EC2-private_name
   }
 }
+
+/*resource "aws_instance" "CA-EC2-PUBLIC" {
+  ami             = data.aws_ami.ubuntu.id
+  instance_type   = "t2.micro"
+  subnet_id = 
+  key_name = var.key_name
+
+tags = {
+    Name = var.CA-EC2-public_name
+  }
+}
+*/
