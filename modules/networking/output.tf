@@ -36,3 +36,8 @@ output "sg_CA-PRIVATE-SG_id" {
   description = "subnet id"
   value       = aws_security_group.CA-PRIVATE-SG.id
 }
+
+output "CA-NATGW_id" {
+  description = "CA-NATGW_id"
+  value       = aws_nat_gateway.CA-NATGW.id
+}

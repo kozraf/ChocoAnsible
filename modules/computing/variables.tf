@@ -3,6 +3,9 @@ variable "tag_name" {
 
   }
 
+variable "amiused" {
+  type = string
+}
 
 variable "sbnetid" {
   type = string
