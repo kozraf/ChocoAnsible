@@ -22,6 +22,7 @@ module "computing" {
   CA-EC2-BASTION_amiused = module.computing.amiids.ubuntuami
   CA-EC2-BASTION_sbnetid = module.networking.subnet_CA-USEAST1A-PUB_id
   CA-EC2-BASTION_secgroup = [module.networking.sg_CA-BASTION_id]
+  #CA-EC2-BASTION_public_ip = module.computing.BASTION_public_IP
   CA-EC2-BASTION_tag_name = "CA-EC2-BASTION"
 
   CA-EC2-orchestrator_amiused = module.computing.amiids.ubuntuami
