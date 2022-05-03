@@ -1,3 +1,9 @@
+/*
+hashicorp/local v2.2.2
+hashicorp/aws v4.10.0
+hashicorp/tls v3.3.0
+*/
+
 provider "aws" {
   region     = var.region
   access_key = var.access_key

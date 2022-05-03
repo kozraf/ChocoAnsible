@@ -1,9 +1,14 @@
-/*output "vpc" {
+output "BASTION_public_IP" {
+  value = module.computing.BASTION_public_IP
+}
+
+/*
+output "vpc" {
   value = module.networking
 }
 */
 
-output "vpc_id" {
+/*utput "vpc_id" {
   value = module.networking.vpc_id
 }
 
@@ -15,6 +20,8 @@ output "sg" {
   }
 
 }
+*/
+
 
 #output "subnet_id" {
 #  value = module.vpc.subnet_CA-USEAST1A-PUB_id
