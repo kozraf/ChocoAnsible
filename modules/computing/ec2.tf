@@ -51,3 +51,15 @@ tags = {
     Name = var.CA-EC2-chocorepo_tag_name
   }
 }
+
+resource "aws_instance" "CA-EC2-admin" {
+  ami = var.CA-EC2-admin_amiused
+  instance_type               = "t2.micro"
+  subnet_id                   = var.CA-EC2-admin_sbnetid
+  vpc_security_group_ids      = var.CA-EC2-admin_secgroup
+  key_name                    = var.key_name
+  #user_data = "${file("CA-EC2-orchestrator_user_data.sh")}"
+tags = {
+    Name = var.CA-EC2-admin_tag_name
+  }
+}

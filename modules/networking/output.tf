@@ -24,7 +24,7 @@ output "subnet_CA-USEAST1B-PRIV_id" {
 
 output "sg_CA-PUBLIC-SG_id" {
   description = "security group id"
-  value       = aws_security_group.CA-PUBLIC-SG
+  value       = aws_security_group.CA-PUBLIC-SG.id
 }
 
 output "sg_CA-BASTION_id" {

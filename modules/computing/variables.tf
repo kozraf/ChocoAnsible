@@ -13,9 +13,6 @@ variable "CA-EC2-BASTION_secgroup" {
   type = list(string)
 }
 
-#variable "CA-EC2-BASTION_public_ip" {
-#  type = list(string)
-#}
 
 variable "CA-EC2-BASTION_tag_name" {
   type = string
@@ -47,6 +44,17 @@ variable "CA-EC2-chocorepo_tag_name" {
   type = string
   }
 
-
+variable "CA-EC2-admin_amiused" {
+  type = string
+}
+variable "CA-EC2-admin_sbnetid" {
+  type = string
+}
+variable "CA-EC2-admin_secgroup" {
+  type = list(string)
+}
+variable "CA-EC2-admin_tag_name" {
+  type = string
+  }
 
 
