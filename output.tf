@@ -2,6 +2,11 @@ output "BASTION_public_IP" {
   value = module.computing.BASTION_public_IP
 }
 
+output "ADMIN_public_IP" {
+  value = module.computing.ADMIN_public_IP
+}
+
+
 /*
 output "vpc" {
   value = module.networking

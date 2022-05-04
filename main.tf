@@ -41,3 +41,7 @@ module "computing" {
 
   depends_on = [module.networking.CA-NATGW_id]
 }
+
+module "ansible"{
+source =  "./modules/ansible"
+}

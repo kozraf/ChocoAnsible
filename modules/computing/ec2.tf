@@ -63,3 +63,14 @@ tags = {
     Name = var.CA-EC2-admin_tag_name
   }
 }
+
+resource "local_file" "hosts_cfg" {
+  content = templatefile("${path.root}/modules/ansible/templates/hosts.tpl",
+    {
+      BASTION = aws_instance.CA-EC2-BASTION.private_ip
+      ADMIN = aws_instance.CA-EC2-admin.private_ip
+    }
+  )
+  filename = "${path.root}/modules/ansible/hosts.cfg"
+}
+

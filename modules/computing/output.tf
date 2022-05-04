@@ -9,3 +9,7 @@ output "BASTION_public_IP" {
   value = aws_instance.CA-EC2-BASTION.public_ip
 
 }
+
+output "ADMIN_public_IP" {
+  value = aws_instance.CA-EC2-admin.public_ip
+}
