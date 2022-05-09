@@ -70,6 +70,22 @@ resource "aws_security_group" "CA-PRIVATE-SG" {
     security_groups  = ["${aws_security_group.CA-BASTION-SG.id}"]
   }
 
+  ingress {
+    description = "RDP"
+    from_port   = 3389
+    to_port     = 3389
+    protocol    = "tcp"
+    security_groups  = ["${aws_security_group.CA-BASTION-SG.id}"]
+  }
+
+  ingress {
+    description = "WinRM"
+    from_port   = 5986
+    to_port     = 5986
+    protocol    = "tcp"
+    security_groups  = ["${aws_security_group.CA-BASTION-SG.id}"]
+  }
+
   egress {
     from_port        = 0
     to_port          = 0
