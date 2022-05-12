@@ -69,7 +69,7 @@ tags = {
 resource "local_file" "ansible_hosts_file" {
   content = templatefile("${path.root}/modules/ansible/templates/hosts.tpl",
     {
-      ADMIN = aws_instance.CA-EC2-admin.private_ip
+      admin = aws_instance.CA-EC2-admin.private_ip
       chocorepo = aws_instance.CA-EC2-chocorepo.private_ip
       orchestrator = aws_instance.CA-EC2-orchestrator.private_ip
     }

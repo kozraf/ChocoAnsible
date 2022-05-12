@@ -75,8 +75,9 @@ resource "aws_security_group" "CA-PRIVATE-SG" {
     from_port   = 3389
     to_port     = 3389
     protocol    = "tcp"
-    security_groups  = ["${aws_security_group.CA-BASTION-SG.id}"]
+    security_groups  = ["${aws_security_group.CA-PUBLIC-SG.id}"]
   }
+
 
   ingress {
     description = "WinRM"
