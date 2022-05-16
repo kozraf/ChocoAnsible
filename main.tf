@@ -19,25 +19,25 @@ module "computing" {
 
   key_name = aws_key_pair.key_pair.key_name
 
-  CA-EC2-BASTION_amiused = module.computing.amiids.ubuntuami
-  CA-EC2-BASTION_sbnetid = module.networking.subnet_CA-USEAST1A-PUB_id
-  CA-EC2-BASTION_secgroup = [module.networking.sg_CA-BASTION_id]
-  CA-EC2-BASTION_tag_name = "CA-EC2-BASTION"
+  bastion_amiused = module.computing.amiids.ubuntuami
+  bastion_sbnetid = module.networking.subnet_CA-USEAST1A-PUB_id
+  bastion_secgroup = [module.networking.bastion-sg_id]
+  bastion_tag_name = "bastion"
 
-  CA-EC2-orchestrator_amiused = module.computing.amiids.ubuntuami
-  CA-EC2-orchestrator_sbnetid = module.networking.subnet_CA-USEAST1B-PRIV_id
-  CA-EC2-orchestrator_secgroup = [module.networking.sg_CA-PRIVATE-SG_id]
-  CA-EC2-orchestrator_tag_name = "CA-EC2-orchestrator"
+  orchestrator_amiused = module.computing.amiids.ubuntuami
+  orchestrator_sbnetid = module.networking.subnet_CA-USEAST1B-PRIV_id
+  orchestrator_secgroup = [module.networking.orchestrator-sg_id]
+  orchestrator_tag_name = "orchestrator"
 
-  CA-EC2-chocorepo_amiused = module.computing.amiids.windowsami
-  CA-EC2-chocorepo_sbnetid = module.networking.subnet_CA-USEAST1B-PRIV_id
-  CA-EC2-chocorepo_secgroup = [module.networking.sg_CA-PRIVATE-SG_id]
-  CA-EC2-chocorepo_tag_name = "CA-EC2-chocorepo"
+  chocorepo_amiused = module.computing.amiids.windowsami
+  chocorepo_sbnetid = module.networking.subnet_CA-USEAST1B-PRIV_id
+  chocorepo_secgroup = [module.networking.chocorepo-sg_id]
+  chocorepo_tag_name = "chocorepo"
 
-  CA-EC2-admin_amiused = module.computing.amiids.windowsami
-  CA-EC2-admin_sbnetid = module.networking.subnet_CA-USEAST1A-PUB_id
-  CA-EC2-admin_secgroup = [module.networking.sg_CA-PUBLIC-SG_id]
-  CA-EC2-admin_tag_name = "CA-EC2-admin"
+  admin_amiused = module.computing.amiids.windowsami
+  admin_sbnetid = module.networking.subnet_CA-USEAST1A-PUB_id
+  admin_secgroup = [module.networking.admin-sg_id]
+  admin_tag_name = "admin"
 
   depends_on = [module.networking.CA-NATGW_id]
 }

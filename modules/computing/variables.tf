@@ -2,58 +2,58 @@ variable "key_name" {
   type = string
 }
 
-variable "CA-EC2-BASTION_amiused" {
+variable "bastion_amiused" {
   type = string
 }
-variable "CA-EC2-BASTION_sbnetid" {
+variable "bastion_sbnetid" {
   type = string
 }
 
-variable "CA-EC2-BASTION_secgroup" {
+variable "bastion_secgroup" {
   type = list(string)
 }
 
 
-variable "CA-EC2-BASTION_tag_name" {
+variable "bastion_tag_name" {
   type = string
   }
 
-variable "CA-EC2-orchestrator_amiused" {
+variable "orchestrator_amiused" {
   type = string
 }
-variable "CA-EC2-orchestrator_sbnetid" {
+variable "orchestrator_sbnetid" {
   type = string
 }
-variable "CA-EC2-orchestrator_secgroup" {
+variable "orchestrator_secgroup" {
   type = list(string)
 }
-variable "CA-EC2-orchestrator_tag_name" {
+variable "orchestrator_tag_name" {
   type = string
   }
 
-variable "CA-EC2-chocorepo_amiused" {
+variable "chocorepo_amiused" {
   type = string
 }
-variable "CA-EC2-chocorepo_sbnetid" {
+variable "chocorepo_sbnetid" {
   type = string
 }
-variable "CA-EC2-chocorepo_secgroup" {
+variable "chocorepo_secgroup" {
   type = list(string)
 }
-variable "CA-EC2-chocorepo_tag_name" {
+variable "chocorepo_tag_name" {
   type = string
   }
 
-variable "CA-EC2-admin_amiused" {
+variable "admin_amiused" {
   type = string
 }
-variable "CA-EC2-admin_sbnetid" {
+variable "admin_sbnetid" {
   type = string
 }
-variable "CA-EC2-admin_secgroup" {
+variable "admin_secgroup" {
   type = list(string)
 }
-variable "CA-EC2-admin_tag_name" {
+variable "admin_tag_name" {
   type = string
   }
 

@@ -1,11 +1,11 @@
-resource "aws_instance" "CA-EC2-BASTION" {
-  ami = var.CA-EC2-BASTION_amiused
+resource "aws_instance" "bastion" {
+  ami = var.bastion_amiused
   instance_type               = "t2.micro"
-  subnet_id                   = var.CA-EC2-BASTION_sbnetid
-  vpc_security_group_ids      = var.CA-EC2-BASTION_secgroup
+  subnet_id                   = var.bastion_sbnetid
+  vpc_security_group_ids      = var.bastion_secgroup
   key_name                    = var.key_name
   associate_public_ip_address = true
-  user_data = "${file("CA-EC2-BASTION_user_data.sh")}"
+  user_data = "${file("bastion_user_data.sh")}"
   depends_on = [local_file.ansible_hosts_file]
 
   provisioner "file" {
@@ -23,55 +23,55 @@ resource "aws_instance" "CA-EC2-BASTION" {
   }
 
   tags = {
-    Name = var.CA-EC2-BASTION_tag_name
+    Name = var.bastion_tag_name
   }
 }
 
 
-resource "aws_instance" "CA-EC2-orchestrator" {
-  ami = var.CA-EC2-BASTION_amiused
+resource "aws_instance" "orchestrator" {
+  ami = var.bastion_amiused
   instance_type               = "t2.micro"
-  subnet_id                   = var.CA-EC2-orchestrator_sbnetid
-  vpc_security_group_ids      = var.CA-EC2-orchestrator_secgroup
+  subnet_id                   = var.orchestrator_sbnetid
+  vpc_security_group_ids      = var.orchestrator_secgroup
   key_name                    = var.key_name
-  user_data = "${file("CA-EC2-orchestrator_user_data.sh")}"
+  user_data = "${file("orchestrator_user_data.sh")}"
 
 
 tags = {
-    Name = var.CA-EC2-orchestrator_tag_name
+    Name = var.orchestrator_tag_name
   }
 }
 
-resource "aws_instance" "CA-EC2-chocorepo" {
-  ami = var.CA-EC2-chocorepo_amiused
+resource "aws_instance" "chocorepo" {
+  ami = var.chocorepo_amiused
   instance_type               = "t2.micro"
-  subnet_id                   = var.CA-EC2-chocorepo_sbnetid
-  vpc_security_group_ids      = var.CA-EC2-chocorepo_secgroup
+  subnet_id                   = var.chocorepo_sbnetid
+  vpc_security_group_ids      = var.chocorepo_secgroup
   key_name                    = var.key_name
-  user_data = "${file("CA-EC2-chocorepo_user_data.sh")}"
+  user_data = "${file("chocorepo_user_data.sh")}"
 tags = {
-    Name = var.CA-EC2-chocorepo_tag_name
+    Name = var.chocorepo_tag_name
   }
 }
 
-resource "aws_instance" "CA-EC2-admin" {
-  ami = var.CA-EC2-admin_amiused
+resource "aws_instance" "admin" {
+  ami = var.admin_amiused
   instance_type               = "t2.micro"
-  subnet_id                   = var.CA-EC2-admin_sbnetid
-  vpc_security_group_ids      = var.CA-EC2-admin_secgroup
+  subnet_id                   = var.admin_sbnetid
+  vpc_security_group_ids      = var.admin_secgroup
   key_name                    = var.key_name
-  #user_data = "${file("CA-EC2-orchestrator_user_data.sh")}"
+  #user_data = "${file("orchestrator_user_data.sh")}"
 tags = {
-    Name = var.CA-EC2-admin_tag_name
+    Name = var.admin_tag_name
   }
 }
 
 resource "local_file" "ansible_hosts_file" {
   content = templatefile("${path.root}/modules/ansible/templates/hosts.tpl",
     {
-      admin = aws_instance.CA-EC2-admin.private_ip
-      chocorepo = aws_instance.CA-EC2-chocorepo.private_ip
-      orchestrator = aws_instance.CA-EC2-orchestrator.private_ip
+      admin = aws_instance.admin.private_ip
+      chocorepo = aws_instance.chocorepo.private_ip
+      orchestrator = aws_instance.orchestrator.private_ip
     }
   )
 

@@ -44,17 +44,22 @@ variable "rt_CA-PRIV-RT_name" {
   default = "CA-PRIV-RT"
 }
 
-variable "sg_CA-PUBLIC-SG_name" {
+variable "orchestrator-sg_name" {
   type = string
-  default = "CA-PUBLIC-SG"
+  default = "orchestrator-sg"
 }
 
-variable "sg_CA-BASTION-SG_name" {
+variable "bastion-sg_name" {
   type = string
-  default = "CA-BASTION-SG"
+  default = "bastion-sg"
 }
 
-variable "sg_CA-PRIVATE-SG_name" {
+variable "chocorepo-sg_name" {
   type = string
-  default = "CA-PRIVATE-SG"
+  default = "chocorepo-sg"
+}
+
+variable "admin-sg_name" {
+  type = string
+  default = "admin-sg"
 }

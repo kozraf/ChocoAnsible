@@ -6,10 +6,10 @@ output "amiids" {
 }
 
 output "BASTION_public_IP" {
-  value = aws_instance.CA-EC2-BASTION.public_ip
+  value = aws_instance.bastion.public_ip
 
 }
 
 output "ADMIN_public_IP" {
-  value = aws_instance.CA-EC2-admin.public_ip
+  value = aws_instance.admin.public_ip
 }
