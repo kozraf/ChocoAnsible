@@ -1,8 +1,16 @@
 [chocorepo_host]
-10.0.2.149
+10.0.2.203
 
 [admin_host]
-10.0.1.160
+10.0.1.104
 
 [orchestrator_host]
-10.0.2.252
+10.0.2.108
+
+[chocorepo_host:vars]
+ansible_user=Administrator
+ansible_password=
+ansible_connection=winrm
+ansible_winrm_transport=credssp
+ansible_winrm_server_cert_validation=ignore
+ansible_port=5986

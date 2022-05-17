@@ -5,7 +5,7 @@ sudo apt update -y
 sudo apt install -y software-properties-common
 sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install -y ansible
-sudo apt install python3-pip
+sudo apt install python3-pip -y
 sudo pip install pywinrm[credssp]
 
 export ANSIBLE_LOAD_CALLBACK_PLUGINS=1
