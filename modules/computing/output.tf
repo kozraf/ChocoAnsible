@@ -10,6 +10,10 @@ output "BASTION_public_IP" {
 
 }
 
+output "aws_AZ" {
+  value = data.aws_availability_zones.available.names
+}
+
 output "ADMIN_public_IP" {
   value = aws_instance.admin.public_ip
 }

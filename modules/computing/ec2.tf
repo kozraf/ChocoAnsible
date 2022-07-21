@@ -1,5 +1,20 @@
+/*locals {
+    bastion_instances = {
+      #for_each = data.aws_availability_zones.available.names
+      name = ["test1", "test2"]
+      #az   = "${p[0]}"
+
+    }
+}
+*/
+
 resource "aws_instance" "bastion" {
+/*  for_each = {
+        for i in local.bastion_instances : "${i.name}" => i
+    }
+*/
   ami = var.bastion_amiused
+#  availability_zone = "${each.value.az}"
   instance_type               = "t2.micro"
   subnet_id                   = var.bastion_sbnetid
   vpc_security_group_ids      = var.bastion_secgroup
@@ -24,6 +39,7 @@ resource "aws_instance" "bastion" {
 
   tags = {
     Name = var.bastion_tag_name
+   # Name = "${each.value.name}"
   }
 }
 

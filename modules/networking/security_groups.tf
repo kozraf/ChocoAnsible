@@ -89,6 +89,29 @@ resource "aws_security_group" "chocorepo-sg" {
     security_groups  = ["${aws_security_group.admin-sg.id}"]
   }
 
+  ingress {
+    description = "chocorepo-HTTPS"
+    from_port   = 8443
+    to_port     = 8443
+    protocol    = "tcp"
+    security_groups  = ["${aws_security_group.admin-sg.id}"]
+  }
+
+  ingress {
+    description = "chocorepo-HTTP"
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    security_groups  = ["${aws_security_group.admin-sg.id}"]
+  }
+
+  ingress {
+    description = "HTTP"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    security_groups  = ["${aws_security_group.admin-sg.id}"]
+  }
 
 /*
   ingress {

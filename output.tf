@@ -6,6 +6,10 @@ output "ADMIN_public_IP" {
   value = module.computing.ADMIN_public_IP
 }
 
+output "aws_AZ" {
+  value = module.computing.aws_AZ
+}
+
 
 /*
 output "vpc" {

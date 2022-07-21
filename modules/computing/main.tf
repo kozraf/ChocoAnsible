@@ -29,5 +29,7 @@ data "aws_ami" "windows" {
  owners = ["801119661308"] #microsoft
 }
 
-
+data "aws_availability_zones" "available" {
+  state = "available"
+}
 
