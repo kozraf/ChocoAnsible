@@ -1,1 +1,1 @@
-This is alpha of ChocoAnsible project
+This is ChocoAnsible project - PoC
