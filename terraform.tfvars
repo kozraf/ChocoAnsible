@@ -1,6 +1,6 @@
 region = "us-east-1"
-access_key = "AKIAXCTD4COIXIIGUQLI"
-secret_key = "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"
+access_key = "AKIAUDRLOKXJAWN53ZZQ"
+secret_key = "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"
 
 #cidr_block = "10.0.0.0/16"
 
