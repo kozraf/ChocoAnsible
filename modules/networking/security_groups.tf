@@ -11,7 +11,6 @@ resource "aws_security_group" "CA-PUBLIC-SG" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
-
   tags = {
     Name = var.sg_CA-PUBLIC-SG_name
   }
@@ -30,6 +29,21 @@ resource "aws_security_group" "CA-BASTION-SG" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
 
+   egress {
+    description      = "HTTPS"
+    from_port        = 443
+    to_port          = 443
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
+     egress {
+    description      = "HTTP"
+    from_port        = 80
+    to_port          = 80
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
 
   tags = {
     Name = var.sg_CA-BASTION-SG_name
