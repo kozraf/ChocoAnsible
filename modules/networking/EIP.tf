@@ -1,4 +1,4 @@
 resource "aws_eip" "CA-EIP" {
-  vpc              = true
+  domain = "vpc"
   public_ipv4_pool = "amazon"
 }
