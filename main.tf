@@ -12,6 +12,7 @@ module "computing" {
   source   = "./modules/computing"
 
   key_name = aws_key_pair.key_pair.key_name
+  iam_instance_profile = aws_iam_instance_profile.IAMprofile_instance_profile.name
 
   CA-EC2-BASTION_amiused = module.computing.amiids.ubuntuami
   CA-EC2-BASTION_sbnetid = module.networking.subnet_CA-USEAST1A-PUB_id
@@ -22,6 +23,7 @@ module "computing" {
   CA-EC2-orchestrator_sbnetid = module.networking.subnet_CA-USEAST1B-PRIV_id
   CA-EC2-orchestrator_secgroup = [module.networking.sg_CA-PRIVATE-SG_id]
   CA-EC2-orchestrator_tag_name = "CA-EC2-orchestrator"
+
 
   CA-EC2-chocorepo_amiused = module.computing.amiids.windowsami
   CA-EC2-chocorepo_sbnetid = module.networking.subnet_CA-USEAST1B-PRIV_id

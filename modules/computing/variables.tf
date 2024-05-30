@@ -2,6 +2,10 @@ variable "key_name" {
   type = string
 }
 
+variable "iam_instance_profile" {
+  type = string
+  }
+
 variable "CA-EC2-BASTION_amiused" {
   type = string
 }
