@@ -3,7 +3,7 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20230208"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-arm64-server-20240411"]
   }
 
   filter {
@@ -19,7 +19,7 @@ data "aws_ami" "windows" {
 
   filter {
     name   = "name"
-    values = ["Windows_Server-2022-English-Full-Base-2023.02.15"]
+    values = ["Windows_Server-2022-English-Full-Base-2024.04.10"]
   }
 
   filter {
